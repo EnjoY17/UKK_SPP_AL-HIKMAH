@@ -10,7 +10,7 @@
 
         <div class="pull-left">
 
-            <h2>Add New siswa</h2>
+            <h2 class="display-4">Add New Siswa</h2>
 
         </div>
 
@@ -100,7 +100,7 @@
         <div class="col-xs-5 col-sm-5 col-md-5">
             <div class="form-group">
                 <strong>No Telp:</strong>
-                <input type="number" name="no_telp" class="form-control" placeholder="08xxxx">
+                <input type="number" name="no_telp" class="form-control" placeholder="08xxxx" min="0">
             </div>
         </div>
 

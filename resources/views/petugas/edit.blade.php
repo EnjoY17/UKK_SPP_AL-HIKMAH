@@ -10,7 +10,7 @@
 
             <div class="pull-left">
 
-                <h2>Edit petuga</h2>
+                <h2 class="display-4">Edit petuga</h2>
 
             </div>
 

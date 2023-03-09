@@ -3,12 +3,9 @@
     <div class="container">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Aktivitas Pembayaran</h2>
+                <h2 class="display-4">Aktivitas Pembayaran</h2>
 
 
-            </div>
-            <div class="pull-right">
-                <a href="{{ route('history.import') }}" class="btn btn-primary" target="_blank">CETAK PDF</a>
             </div>
         </div>
         <br>
@@ -49,7 +46,12 @@
 
     <script>
         $(document).ready(function() {
-            $('#example').DataTable();
+            $('#example').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    'excel', 'pdf'
+            ]
+            });
         });
     </script>
 @endsection

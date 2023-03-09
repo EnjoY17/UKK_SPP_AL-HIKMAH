@@ -9,6 +9,7 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+use alert;
 
 class SiswaController extends Controller
 {
@@ -19,10 +20,9 @@ class SiswaController extends Controller
      */
     public function index()
     {
-        $siswa = Siswa::all();
-        $spps = Spp::all();
-        $rombels = Rombel::all();
-        return view('siswas.index', compact('siswa', 'spps', 'rombels'));
+        $siswa = Siswa::join('rombels' , 'rombels.id' , '=', 'siswas.id' )
+        ->get();
+        return view('siswas.index', compact('siswa'));
     }
 
     /**
@@ -45,6 +45,12 @@ class SiswaController extends Controller
      */
     public function store(Request $request)
     {
+        $nisn = Siswa::where('nisn', $request->nisn)->get();
+
+        if(sizeof($nisn) == 1) {
+            return redirect()->back();
+        }
+        
         $request->validate([
             'nisn'=>'required',
             'nis'=>'required',
@@ -59,7 +65,7 @@ class SiswaController extends Controller
         Siswa::create($request->all());
         User::create([
             'id'=>$request->id,
-            'name'=>$request->nama,
+            'name'=>$request->nis,
             'email'=>$request->nis ."@gmail.com",
             'password' => Hash::make($request->nis),
             'level'=>'3',

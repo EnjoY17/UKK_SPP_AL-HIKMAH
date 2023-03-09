@@ -39,6 +39,12 @@ class PetugaController extends Controller
      */
     public function store(Request $request)
     {
+        $email = Petuga::where('email', $request->email)->get();
+
+        if(sizeof($email) == 1) {
+            return redirect()->back();
+        }
+
         User::create([
             'name' => $request->name,
             'email' => $request->email, 

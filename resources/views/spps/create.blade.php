@@ -10,13 +10,13 @@
 
         <div class="pull-left">
 
-            <h2>Add New Kelas</h2>
+            <h2 class="display-4">Add New Kelas</h2>
 
         </div>
 
         <div class="pull-right">
 
-            <a class="btn btn-primary" href="{{ route('spps.index') }}"> Back</a>
+            <a class="btn btn-primary" href="{{ route('spps.index') }}"><i class="bi bi-backspace"></i>Back</a>
 
         </div>
 
@@ -59,7 +59,7 @@
         <div class="col-xs-5 col-sm-5 col-md-5">
             <div class="form-group">
                 <strong>Tahun:</strong>
-                <input type="number" name="tahun" class="form-control" placeholder="tahun" required min="1">
+                <input type="number" name="tahun" class="form-control" placeholder="tahun" required min="1" >
             </div>
         </div>
 

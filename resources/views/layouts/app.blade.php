@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css2.css') }}">
 
     <script src="{{ asset('assets/jquery-3.6.0.slim.min.js') }}"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="{{ asset('assets/popper.min.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('assets/bootstrap.min.css') }}">
     <script src="{{ asset('assets/bootstrap.min.js') }}"></script>
@@ -41,25 +42,25 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" integrity="sha512-XMVd28F1oH/O71fzwBnV7HucLxVwtxf26XV8P4wPk26EDxuGZ91N8bsOttmnomcCD3CS5ZMRL50H0GgOHvegtg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.datatables.net/buttons/2.3.5/js/buttons.html5.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.3.5/js/buttons.print.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 </head>
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar navbar-dark bg-dark shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('home') }}">Home</a>
                 @if (Auth::user()->level == '1')
-                    <a class="navbar-brand" href="{{ url('spps') }}">SPP</a>
-                    <a class="navbar-brand" href="{{ url('rombels') }}">KELAS</a>
-                    <a class="navbar-brand" href="{{ url('siswas') }}">SISWA</a>
-                    <a class="navbar-brand" href="{{ url('petugas') }}">PETUGAS</a>
-                    <a class="navbar-brand" href="{{ url('pembayarans') }}">PEMBAYARAN</a>
-                    <a class="navbar-brand" href="{{ url('historys') }}">HISTORY</a>
+                    <a class="nav-link text-light" href="{{ url('spps') }}">SPP</a>
+                    <a class="nav-link text-light" href="{{ url('rombels') }}">KELAS</a>
+                    <a class="nav-link text-light" href="{{ url('siswas') }}">SISWA</a>
+                    <a class="nav-link text-light" href="{{ url('petugas') }}">PETUGAS</a>
+                    <a class="nav-link text-light" href="{{ url('pembayarans') }}">PEMBAYARAN</a>
+                    <a class="nav-link text-light" href="{{ url('historys') }}">HISTORY</a>
                 @elseif(Auth::user()->level == '2')
-                    <a class="navbar-brand" href="{{ url('pembayarans') }}">Pembayaran</a>
-                    <a class="navbar-brand" href="{{ url('historys') }}">Log</a>
+                    <a class="nav-link text-light" href="{{ url('pembayarans') }}">Pembayaran</a>
+                    <a class="nav-link text-light" href="{{ url('historys') }}">Log</a>
                 @elseif(Auth::user()->level == '3')
-                    <a class="navbar-brand" href="{{ url('historySiswa') }}">History</a>
+                    <a class="nav-link text-light" href="{{ url('historySiswa') }}">History</a>
                 @endif
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"

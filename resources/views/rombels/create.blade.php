@@ -10,7 +10,7 @@
 
         <div class="pull-left">
 
-            <h2>Add New Kelas</h2>
+            <h2 class="display-4">Add New Kelas</h2>
 
         </div>
 
